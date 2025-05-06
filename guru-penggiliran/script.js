@@ -27,14 +27,23 @@ function shuffleArray(array) {
     return array;
 }
 
-// Function to rotate duties
-function rotateDuties() {
+// Function to save assignments to localStorage
+function saveAssignments(assignments) {
+    localStorage.setItem('dutyAssignments', JSON.stringify(assignments));
+}
+
+// Function to load assignments from localStorage
+function loadAssignments() {
+    const saved = localStorage.getItem('dutyAssignments');
+    return saved ? JSON.parse(saved) : null;
+}
+
+// Function to update duty display
+function updateDutyDisplay(assignments) {
     const dutyElements = document.querySelectorAll('.duty-teacher');
-    const shuffledTeachers = shuffleArray([...teachers]);
-    
     dutyElements.forEach((element, index) => {
-        if (index < shuffledTeachers.length) {
-            element.textContent = `Guru Bertugas: ${shuffledTeachers[index].code}`;
+        if (index < assignments.length) {
+            element.textContent = `Guru Bertugas: ${assignments[index]}`;
             // Add animation class
             element.classList.add('text-change');
             setTimeout(() => {
@@ -42,6 +51,25 @@ function rotateDuties() {
             }, 500);
         }
     });
+}
+
+// Function to rotate duties
+function rotateDuties() {
+    const shuffledTeachers = shuffleArray([...teachers]);
+    const newAssignments = shuffledTeachers.map(teacher => teacher.code);
+    updateDutyDisplay(newAssignments);
+    saveAssignments(newAssignments);
+}
+
+// Function to initialize duties
+function initializeDuties() {
+    const savedAssignments = loadAssignments();
+    if (savedAssignments) {
+        updateDutyDisplay(savedAssignments);
+    } else {
+        // If no saved assignments, create initial random assignments
+        rotateDuties();
+    }
 }
 
 // Function to initialize the rotation button
@@ -73,4 +101,5 @@ function addStyles() {
 document.addEventListener('DOMContentLoaded', () => {
     initializeRotationButton();
     addStyles();
+    initializeDuties();
 });
