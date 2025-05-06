@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Penggiliran Waktu Guru Bertugas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .duty-card {
+            transition: all 0.3s ease;
+        }
+        .duty-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .rotate-button {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .teacher-card {
+            transition: all 0.3s ease;
+        }
+        .teacher-card:hover {
+            transform: translateY(-2px);
+            background-color: #f8fafc;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-6 px-4 shadow-lg">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-bold text-center">Aplikasi Penggiliran Waktu Guru Bertugas</h1>
+            <p class="text-center mt-2 text-blue-100">Kumpulan Guru Bertugas: Kumpulan 4</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Teachers Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-800">Senarai Guru Bertugas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Teacher Cards -->
+                <div class="bg-white p-4 rounded-lg shadow-md teacher-card">
+                    <div class="flex items-center">
+                        <i class="fas fa-user-circle text-3xl text-blue-600 mr-3"></i>
+                        <div>
+                            <h3 class="font-semibold">Gema Hadi Syahputra</h3>
+                            <p class="text-sm text-gray-600">GHS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md teacher-card">
+                    <div class="flex items-center">
+                        <i class="fas fa-user-circle text-3xl text-blue-600 mr-3"></i>
+                        <div>
+                            <h3 class="font-semibold">Mohd Asraf Alias</h3>
+                            <p class="text-sm text-gray-600">MAA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md teacher-card">
+                    <div class="flex items-center">
+                        <i class="fas fa-user-circle text-3xl text-blue-600 mr-3"></i>
+                        <div>
+                            <h3 class="font-semibold">Munarizan Muin</h3>
+                            <p class="text-sm text-gray-600">MM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md teacher-card">
+                    <div class="flex items-center">
+                        <i class="fas fa-user-circle text-3xl text-blue-600 mr-3"></i>
+                        <div>
+                            <h3 class="font-semibold">Suriawani Mahbob</h3>
+                            <p class="text-sm text-gray-600">SM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md teacher-card">
+                    <div class="flex items-center">
+                        <i class="fas fa-user-circle text-3xl text-blue-600 mr-3"></i>
+                        <div>
+                            <h3 class="font-semibold">Sabariah Zainal</h3>
+                            <p class="text-sm text-gray-600">SZ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md teacher-card">
+                    <div class="flex items-center">
+                        <i class="fas fa-user-circle text-3xl text-blue-600 mr-3"></i>
+                        <div>
+                            <h3 class="font-semibold">Erma Farida Abu Hassan</h3>
+                            <p class="text-sm text-gray-600">EFAH</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Duty Schedule Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-800">Jadual Tugas Harian</h2>
+            <div class="space-y-4">
+                <!-- Duty Cards -->
+                <div class="bg-white p-6 rounded-lg shadow-md duty-card">
+                    <h3 class="text-lg font-semibold text-blue-700 mb-3">
+                        <i class="fas fa-user-tie mr-2"></i>
+                        Ketua Guru Mingguan dan Perhimpunan
+                    </h3>
+                    <div class="ml-8 space-y-2">
+                        <p class="text-gray-600">
+                            <i class="far fa-clock mr-2"></i>
+                            Perhimpunan Rasmi: 7:10 pagi - 8:00 pagi
+                        </p>
+                        <p class="text-gray-600">
+                            <i class="far fa-clock mr-2"></i>
+                            Perhimpunan Harian: 7:10 pagi - 7:30 pagi
+                        </p>
+                        <p class="font-medium text-blue-600 mt-2 duty-teacher">Guru Bertugas: GHS</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md duty-card">
+                    <h3 class="text-lg font-semibold text-blue-700 mb-3">
+                        <i class="fas fa-utensils mr-2"></i>
+                        Bertugas Bahagian Kantin
+                    </h3>
+                    <div class="ml-8 space-y-2">
+                        <p class="text-gray-600">
+                            <i class="far fa-clock mr-2"></i>
+                            Menengah Rendah: 9:30 pagi - 9:50 pagi
+                        </p>
+                        <p class="text-gray-600">
+                            <i class="far fa-clock mr-2"></i>
+                            Menengah Atas: 10:00 pagi - 10:20 pagi
+                        </p>
+                        <p class="font-medium text-blue-600 mt-2 duty-teacher">Guru Bertugas: MAA</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md duty-card">
+                    <h3 class="text-lg font-semibold text-blue-700 mb-3">
+                        <i class="fas fa-mosque mr-2"></i>
+                        Bertugas Solat Zohor (Perempuan) & Dewan Makan
+                    </h3>
+                    <div class="ml-8 space-y-2">
+                        <p class="text-gray-600">
+                            <i class="far fa-clock mr-2"></i>
+                            Solat Zohor: 1:50 petang - 2:00 petang
+                        </p>
+                        <p class="text-gray-600">
+                            <i class="far fa-clock mr-2"></i>
+                            Makan Tengah Hari: 1:20 petang - 1:45 petang
+                        </p>
+                        <p class="font-medium text-blue-600 mt-2 duty-teacher">Guru Bertugas: MM</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md duty-card">
+                    <h3 class="text-lg font-semibold text-blue-700 mb-3">
+                        <i class="fas fa-mosque mr-2"></i>
+                        Bertugas Solat Zohor (Lelaki) & Asar
+                    </h3>
+                    <div class="ml-8 space-y-2">
+                        <p class="text-gray-600">
+                            <i class="far fa-clock mr-2"></i>
+                            Solat Zohor: 1:50 petang - 2:00 petang
+                        </p>
+                        <p class="text-gray-600">
+                            <i class="far fa-clock mr-2"></i>
+                            Solat Asar: 4:20 petang
+                        </p>
+                        <p class="font-medium text-blue-600 mt-2 duty-teacher">Guru Bertugas: SM</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md duty-card">
+                    <h3 class="text-lg font-semibold text-blue-700 mb-3">
+                        <i class="fas fa-first-aid mr-2"></i>
+                        Bertugas Urusan Kesihatan Murid
+                    </h3>
+                    <div class="ml-8 space-y-2">
+                        <p class="text-gray-600">
+                            <i class="far fa-clock mr-2"></i>
+                            Urusan ke Klinik: 3:00 petang
+                        </p>
+                        <p class="font-medium text-blue-600 mt-2 duty-teacher">Guru Bertugas: SZ</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md duty-card">
+                    <h3 class="text-lg font-semibold text-blue-700 mb-3">
+                        <i class="fas fa-broom mr-2"></i>
+                        Bertugas Kebersihan Kelas & Makan Petang
+                    </h3>
+                    <div class="ml-8 space-y-2">
+                        <p class="text-gray-600">
+                            <i class="far fa-clock mr-2"></i>
+                            Makan Petang: 4:00 petang
+                        </p>
+                        <p class="text-gray-600">
+                            <i class="fas fa-check-square mr-2"></i>
+                            Pemeriksaan Kelas: Setiap 2 hari (Blok A, C, dan D)
+                        </p>
+                        <p class="font-medium text-blue-600 mt-2 duty-teacher">Guru Bertugas: EFAH</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 px-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Aplikasi Penggiliran Waktu Guru Bertugas</p>
+        </div>
+    </footer>
+</body>
+</html>
